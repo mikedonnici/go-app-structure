@@ -2,7 +2,7 @@
 
 **1. Top-level main**
 
-```text
+```
 /project
  |
  |--main.go # primary executable
