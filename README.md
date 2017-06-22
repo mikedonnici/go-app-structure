@@ -109,12 +109,51 @@ $ heroku run goodbye
 ```
 
 
+Example for MappCPD adapted from [here](https://www.goinggo.net/2017/02/package-oriented-design.html)
+
+```
+github.com/mappcpd/api
+├── cmd/
+│   ├── servi/
+│   │   ├── cmdupdate/
+│   │   ├── cmdquery/
+│   │   └── servi.go
+│   └── servid/
+│       ├── routes/
+│       │   └── handlers/
+│       ├── tests/
+│       └── servid.go
+├── internal/
+│   ├── attachments/
+│   ├── locations/
+│   ├── orders/
+│   │   ├── customers/
+│   │   ├── items/
+│   │   ├── tags/
+│   │   └── orders.go
+│   ├── registrations/
+│   └── platform/
+│       ├── crypto/
+│       ├── mongo/
+│       └── json/
+└── vendor/
+    ├── github.com/
+    │   ├── ardanlabs/
+    │   ├── golang/
+    │   ├── prometheus/
+    └── golang.org/
+```
+
+
+
+
 ### References
 
 https://golang.org/doc/code.html
 
 https://github.com/ardanlabs/gotraining/blob/master/topics/go/design/packaging/README.md
 
+https://www.goinggo.net/2017/02/package-oriented-design.html
  
  
  
