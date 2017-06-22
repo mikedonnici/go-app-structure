@@ -1,0 +1,10 @@
+{
+  "rootPath": "github.com/mikedonnici/go-app-structure",
+  "heroku": {
+		"goVersion": "go1.8",
+		"install": [
+            "./app/...",
+			"./cmd/..."
+		]
+	}
+}
