@@ -5,30 +5,30 @@
 ```text
 /project
  |
- |__ main.go # primary executable
+ |--main.go # primary executable
  |
- |__/cmd # contains code used for cli commands
+ |--/cmd # contains code used for cli commands
  |   |
- |   |__/executable1 # executables require package main so have 'main.go'
- |   |   |__ main.go
- |   |   |__/internal # packages only needed to executable1 
- |   |   |..
- |   |__/executable2
- |   |   |__ main.go
+ |   |--/executable1 # executables require package main so have 'main.go'
+ |   |   |--main.go
+ |   |   |--/internal # packages only needed to executable1 
+ |   |   |...
+ |   |--/executable2
+ |   |   |--main.go
  |   |   |...
  |   |...
  |
- |__/internal # contains internal packages not useful anywhere else
+ |--/internal # contains internal packages not useful anywhere else
  |   |
- |   |__/pkg1 # primary package file named after package (dir)
- |   |   |__ pk1.go
- |   |   |__/internal # packages only needed for pkg1
+ |   |--/pkg1 # primary package file named after package (dir)
+ |   |   |--pk1.go
+ |   |   |--/internal # packages only needed for pkg1
  |   |
- |   |__/pkg2
- |       |__ pkg2.go
+ |   |--/pkg2
+ |       |--pkg2.go
  |
- |__/vendor # third party packages managed with govendor - see below
- |__ vendor.json
+ |--/vendor # third party packages managed with govendor - see below
+ |   |--vendor.json
 ```
 
 **2. Side-by-side version**
@@ -36,31 +36,31 @@
 ```text
 /project
  |
- |__/app # contains main app code - could be 'server'?
+ |--/app # contains main app code - could be 'server'?
  |   |
- |   |__/internal # contains internal packages not useful anywhere else
+ |   |--/internal # contains internal packages not useful anywhere else
  |   |   |
- |   |   |__/pkg1 # primary package file named after package (dir)
- |   |   |   |__pk1.go
- |   |   |   |__/internal # packages only needed for pkg1
+ |   |   |--/pkg1 # primary package file named after package (dir)
+ |   |   |   --pk1.go
+ |   |   |   --/internal # packages only needed for pkg1
  |   |   |
- |   |   |__/pkg2
- |   |       |__pkg2.go
+ |   |   --/pkg2
+ |   |       --pkg2.go
  |   |...
  |
- |__/cmd # contains code used for cli commands
+ --/cmd # contains code used for cli commands
  |   |
- |   |__/executable1 # executables require package main so have 'main.go'
- |   |   |__main.go
- |   |   |__/internal # packages only needed to executable1 
+ |   --/executable1 # executables require package main so have 'main.go'
+ |   |   --main.go
+ |   |   --/internal # packages only needed to executable1 
  |   |   |..
- |   |__/executable2
- |   |   |__main.go
+ |   --/executable2
+ |   |   --main.go
  |   |   |...
  |   |...
  |
- |__/vendor # third party packages managed with govendor - see below
- |__ vendor.json
+ --/vendor # third party packages managed with govendor - see below
+    |-- vendor.json
 ``` 
 
 ###Heroku Deployment 
