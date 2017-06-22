@@ -3,64 +3,40 @@
 **1. Top-level main**
 
 ```
-/project
- |
- |--main.go # primary executable
- |
- |--/cmd # contains code used for cli commands
- |   |
- |   |--/executable1 # executables require package main so have 'main.go'
- |   |   |--main.go
- |   |   |--/internal # packages only needed to executable1 
- |   |   |...
- |   |--/executable2
- |   |   |--main.go
- |   |   |...
- |   |...
- |
- |--/internal # contains internal packages not useful anywhere else
- |   |
- |   |--/pkg1 # primary package file named after package (dir)
- |   |   |--pk1.go
- |   |   |--/internal # packages only needed for pkg1
- |   |
- |   |--/pkg2
- |       |--pkg2.go
- |
- |--/vendor # third party packages managed with govendor - see below
- |   |--vendor.json
+project/
+├── main.go # primary executable
+├── cmd/ # contains code used for cli commands
+│   ├── executable1/ # executables require package main so have 'main.go'
+│   │	└── main.go
+│   └── executable2/
+│       └── main.go
+├── internal/ # contains internal packages not useful anywhere else
+│   ├── pkg1/ # primary package file named after package (dir)
+│   │   └── pkg1.go
+│   └── pkg2/
+│       └── pkg2.go
+└── vendor/ # third party packages managed with govendor - see below
+    └── vendor.json
 ```
 
 **2. Side-by-side version**
 
-```text
-/project
- |
- |--/app # contains main app code - could be 'server'?
- |   |
- |   |--/internal # contains internal packages not useful anywhere else
- |   |   |
- |   |   |--/pkg1 # primary package file named after package (dir)
- |   |   |   --pk1.go
- |   |   |   --/internal # packages only needed for pkg1
- |   |   |
- |   |   --/pkg2
- |   |       --pkg2.go
- |   |...
- |
- --/cmd # contains code used for cli commands
- |   |
- |   --/executable1 # executables require package main so have 'main.go'
- |   |   --main.go
- |   |   --/internal # packages only needed to executable1 
- |   |   |..
- |   --/executable2
- |   |   --main.go
- |   |   |...
- |   |...
- |
- --/vendor # third party packages managed with govendor - see below
-    |-- vendor.json
+```
+project/
+├── app/ # contains main app code - could be 'server'?
+│   └── main.go
+├── cmd/ # contains code used for cli commands
+│   ├── executable1/ # executables require package main so have 'main.go'
+│   │	└── main.go
+│   └── executable2/
+│       └── main.go
+├── internal/ # contains internal packages not useful anywhere else
+│   ├── pkg1/ # primary package file named after package (dir)
+│   │   └── pkg1.go
+│   └── pkg2/
+│       └── pkg2.go
+└── vendor/ # third party packages managed with govendor - see below
+    └── vendor.json
 ``` 
 
 ###Heroku Deployment 
@@ -136,6 +112,8 @@ $ heroku run goodbye
 ### References
 
 https://golang.org/doc/code.html
+
+https://github.com/ardanlabs/gotraining/blob/master/topics/go/design/packaging/README.md
 
  
  
