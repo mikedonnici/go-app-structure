@@ -114,15 +114,17 @@ Example for MappCPD adapted from [here](https://www.goinggo.net/2017/02/package-
 ```
 github.com/mappcpd/api
 ├── cmd/
-│   ├── servi/
-│   │   ├── cmdupdate/
-│   │   ├── cmdquery/
-│   │   └── servi.go
-│   └── servid/
+│   ├── algr/
+│   │   └── main.go
+│   ├── mongr/
+│   │   └── main.go
+│   ├── pubmedr/
+│   │   └── main.go
+│   └── webd/
 │       ├── routes/
 │       │   └── handlers/
 │       ├── tests/
-│       └── servid.go
+│       └── main.go
 ├── internal/
 │   ├── attachments/
 │   ├── locations/
@@ -133,15 +135,18 @@ github.com/mappcpd/api
 │   │   └── orders.go
 │   ├── registrations/
 │   └── platform/
-│       ├── crypto/
+│       ├── jwt/
 │       ├── mongo/
+│       ├── mysql/
 │       └── json/
 └── vendor/
     ├── github.com/
-    │   ├── ardanlabs/
-    │   ├── golang/
-    │   ├── prometheus/
+    │   ├── 34South/
+        │   └── envr/ 
+    │   ├── go-sql-driver/
+    │   └── ...
     └── golang.org/
+        └── x/
 ```
 
 
